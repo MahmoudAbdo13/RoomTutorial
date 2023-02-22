@@ -1,13 +1,20 @@
 package com.mahmoud.roomtutorial;
 
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "post_table")
 public class Post {
 
+    @PrimaryKey(autoGenerate = true)
     private int id;
+    // if do not deet to store userId in room db add @Ignore
     private int userId;
     private String title, body;
 
-    public Post(int id, int userId, String title, String body) {
-        this.id = id;
+    public Post(int userId, String title, String body) {
+
         this.userId = userId;
         this.title = title;
         this.body = body;
