@@ -9,7 +9,7 @@ public class Post {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
-    // if do not deet to store userId in room db add @Ignore
+    // if do not neet to store userId in room db add @Ignore
     private int userId;
     private String title, body;
 
