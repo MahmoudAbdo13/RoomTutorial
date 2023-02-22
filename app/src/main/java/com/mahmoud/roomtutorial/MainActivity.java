@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 binding.editTexttitle.setError("Please enter post title");
                 binding.editTexttitle.setFocusable(true);
             }else {
-                database.postsDao().insertPost(new Post(3, title, body))
+                database.postsDao().insertPost(new Post(new User(14, "Mahmoud"), title, body))
                         .subscribeOn(Schedulers.computation())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(new CompletableObserver() {
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                         });
             }
         });
-        
+
         binding.getButton.setOnClickListener(view -> {
             database.postsDao().getPosts()
                     .subscribeOn(Schedulers.computation())
