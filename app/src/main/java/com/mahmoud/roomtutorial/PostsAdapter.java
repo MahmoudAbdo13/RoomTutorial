@@ -31,8 +31,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsViewHol
         return postsList.size();
     }
 
-    public void setList(List<Post> moviesList) {
-        this.postsList = moviesList;
+    public void setList(List<Post> postsList) {
+        this.postsList = postsList;
         notifyDataSetChanged();
     }
 
