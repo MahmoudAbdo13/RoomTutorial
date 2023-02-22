@@ -23,6 +23,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsViewHol
     @Override
     public void onBindViewHolder(@NonNull PostsViewHolder holder, int position) {
         holder.titleTV.setText(postsList.get(position).getTitle());
+        holder.useIdTV.setText(String.valueOf(postsList.get(position).getUser().getUserId()));
         holder.bodyTV.setText(postsList.get(position).getBody());
     }
 
@@ -37,11 +38,12 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsViewHol
     }
 
     public class PostsViewHolder extends RecyclerView.ViewHolder {
-        private TextView titleTV, bodyTV;
+        private TextView titleTV, bodyTV, useIdTV;
         public PostsViewHolder(@NonNull View itemView) {
             super(itemView);
             titleTV = itemView.findViewById(R.id.item_title_textView);
             bodyTV = itemView.findViewById(R.id.item_body_textView);
+            useIdTV = itemView.findViewById(R.id.item_user_id_textView);
         }
     }
 }
